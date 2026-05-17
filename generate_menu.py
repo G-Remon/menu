@@ -100,7 +100,7 @@ menu_data = [
                     {"ar": "فيوري", "en": "Fury", "price": "45"},
                     {"ar": "تويست", "en": "Twist", "price": "45"},
                     {"ar": "ريد بول", "en": "Red Bull", "price": "90"},
-                    {"ar": "مياه معدنية ص.", "en": "Mineral Water (S)", "price": "15"}
+                    {"ar": "مياه معدنية ", "en": "Water", "price": "15"}
                 ]
             }
         ]
@@ -155,7 +155,6 @@ menu_data = [
                     {"ar": "وافل", "en": "Waffle", "price": "50"},
                     {"ar": "ام علي", "en": "Om Ali", "price": "60"},
                     {"ar": "ارز بلبن", "en": "Rice Pudding", "price": "50"},
-                    {"ar": "مافين كيك", "en": "Muffin Cake", "price": "85"},
                     {"ar": "طواجن شوكلت", "en": "Chocolate Pots", "price": "50"}
                 ]
             }
@@ -171,12 +170,13 @@ menu_data = [
                 "title_ar": "",
                 "title_en": "",
                 "items": [
-                    {"ar": "فانيليا لوتس / كراميل شوكلت", "en": "Vanilla Lotus / Caramel Choco", "price": "70"},
+                    {"ar": "فانيليا / لوتس / كراميل / شوكلت", "en": "Vanilla / Lotus / Caramel / Choco", "price": "70"},
                     {"ar": "فراولة", "en": "Strawberry", "price": "70"},
                     {"ar": "بلوبيري", "en": "Blueberry", "price": "75"},
                     {"ar": "تشيز كيك", "en": "Cheesecake", "price": "110"},
                     {"ar": "توتي فروتي", "en": "Tutti Frutti", "price": "70"},
-                    {"ar": "فروت سالاد", "en": "Fruit Salad", "price": "70"}
+                    {"ar": "فروت سالاد", "en": "Fruit Salad", "price": "70"},
+                    {"ar": "مافين كيك", "en": "Muffin Cake", "price": "85"}
                 ]
             },
             {
