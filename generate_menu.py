@@ -15,7 +15,7 @@ menu_data = [
                 "items": [
                     {"ar": "أمريكانو", "en": "Americano", "price": "80"},
                     {"ar": "اسبريسو", "en": "Espresso", "price": "45"},
-                    {"ar": "دبل اسبريسو", "en": "Double Espresso", "price": "82"},
+                    {"ar": "دبل اسبريسو", "en": "Double Espresso", "price": "75"},
                     {"ar": "كابيتشينو زعفران", "en": "Saffron Cappuccino", "price": "95"},
                     {"ar": "ثري كولور", "en": "Three Colors", "price": "70"},
                     {"ar": "لاتيه", "en": "Latte", "price": "70"},
@@ -187,7 +187,27 @@ menu_data = [
                     {"ar": "كراميل", "en": "Caramel", "price": "15"},
                     {"ar": "لوتس", "en": "Lotus", "price": "20"},
                     {"ar": "بستاشيو", "en": "Pistachio", "price": "20"},
-                    {"ar": "بندق", "en": "Hazelnut", "price": "20"}
+                    {"ar": "بندق", "en": "Hazelnut", "price": "20"},
+                    {"ar": "إضافة اسبريسو", "en": "Espresso Add-on", "price": "30"}
+                ]
+            }
+        ]
+    },
+    {
+        "id": "shisha",
+        "title_ar": "الشيشة",
+        "title_en": "SHISHA",
+        "icon": "💨",
+        "sub_sections": [
+            {
+                "title_ar": "",
+                "title_en": "",
+                "items": [
+                    {"ar": "معسل", "en": "Muassel", "price": "20"},
+                    {"ar": "فواكه مكس", "en": "Mixed Fruits", "price": "100"},
+                    {"ar": "فاخر", "en": "Fakher", "price": "150"},
+                    {"ar": "كريستال", "en": "Crystal", "price": "150"},
+                    {"ar": "لي طبي", "en": "Medical Hose", "price": "15"}
                 ]
             }
         ]
