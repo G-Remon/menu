@@ -155,6 +155,7 @@ menu_data = [
                     {"ar": "وافل", "en": "Waffle", "price": "50"},
                     {"ar": "ام علي", "en": "Om Ali", "price": "60"},
                     {"ar": "ارز بلبن", "en": "Rice Pudding", "price": "50"},
+                    {"ar": "مافين كيك", "en": "Muffin Cake", "price": "85"},
                     {"ar": "طواجن شوكلت", "en": "Chocolate Pots", "price": "50"}
                 ]
             }
@@ -203,11 +204,11 @@ menu_data = [
                 "title_ar": "",
                 "title_en": "",
                 "items": [
-                    {"ar": "معسل", "en": "Muassel", "price": "20"},
-                    {"ar": "فواكه مكس", "en": "Mixed Fruits", "price": "100"},
+                    {"ar": "معسل", "en": "Moassel", "price": "20"},
+                    {"ar": "فواكه مكس", "en": "Fawakeh Mix", "price": "100"},
                     {"ar": "فاخر", "en": "Fakher", "price": "150"},
                     {"ar": "كريستال", "en": "Crystal", "price": "150"},
-                    {"ar": "لي طبي", "en": "Medical Hose", "price": "15"}
+                    {"ar": "لي طبي", "en": "Lai Toby", "price": "15"}
                 ]
             }
         ]
@@ -719,10 +720,6 @@ html_template = f"""<!DOCTYPE html>
       <span class="ar-only">قهوة سليم أفندي</span>
       <span class="en-only">Salim Efendi Coffee</span>
     </h1>
-    <p class="subtitle">
-      <span class="ar-only">قائمة الطعام</span>
-      <span class="en-only">Menu</span>
-    </p>
   </header>
 
   <div class="category-nav-wrapper">
