@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قائمة طعام - قهوة سليم أفندي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A227;
+    --gold-light: #E8C547;
+    --gold-dark: #9B7B1A;
+    --bg: #0A0A0A;
+    --bg2: #111111;
+    --bg3: #161610;
+    --text: #F5EDD8;
+    --text-dim: #C8B88A;
+    --green: #1A4A2A;
+    --green-light: #2D6B3E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a1a;
+    font-family: 'Cairo', 'Amiri', serif;
+    direction: rtl;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    margin: 0 auto 40px;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* ===== BACKGROUND TEXTURE ===== */
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(201,162,39,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(201,162,39,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(10,8,4,0.9) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ===== OUTER BORDER ===== */
+  .outer-border {
+    position: absolute;
+    inset: 8px;
+    border: 2px solid var(--gold);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .inner-border {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(201,162,39,0.3);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ===== CORNER ORNAMENTS ===== */
+  .corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+  }
+  .corner svg { width: 100%; height: 100%; }
+  .corner-tl { top: 6px; right: 6px; }
+  .corner-tr { top: 6px; left: 6px; transform: scaleX(-1); }
+  .corner-bl { bottom: 6px; right: 6px; transform: scaleY(-1); }
+  .corner-br { bottom: 6px; left: 6px; transform: scale(-1,-1); }
+
+  /* ===== HEADER ===== */
+  .header {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 20px 60px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+  .menu-title-en {
+    font-family: 'Cairo', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--gold-light);
+    letter-spacing: 8px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .menu-title-ar {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .logo-img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(201,162,39,0.4));
+  }
+
+  /* ===== GOLD DIVIDER ===== */
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+    margin: 4px 0 10px;
+    position: relative;
+    z-index: 5;
+  }
+  .gold-divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .gold-divider .diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .gold-divider .diamond-sm {
+    width: 4px;
+    height: 4px;
+    background: var(--gold-light);
+    transform: rotate(45deg);
+  }
+
+  /* ===== CONTENT AREA ===== */
+  .content {
+    position: relative;
+    z-index: 5;
+    padding: 0 20px 20px;
+  }
+
+  /* ===== COLUMNS ===== */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  /* ===== SECTION CARD ===== */
+  .section-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(201,162,39,0.25);
+    border-radius: 4px;
+    padding: 10px 12px;
+    position: relative;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(201,162,39,0.3);
+  }
+
+  .section-icon {
+    font-size: 18px;
+  }
+
+  .section-title-ar {
+    font-family: 'Amiri', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold-light);
+    text-align: center;
+  }
+
+  .section-title-en {
+    font-family: 'Cairo', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /* ===== SUB SECTION ===== */
+  .sub-section {
+    margin-bottom: 8px;
+  }
+
+  .sub-title {
+    font-family: 'Amiri', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .sub-title::before {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,162,39,0.2);
+    order: 1;
+  }
+
+  /* ===== ITEM ===== */
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 2px 0;
+    border-bottom: 1px dotted rgba(201,162,39,0.1);
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+
+  .item-name {
+    font-family: 'Cairo', sans-serif;
+    font-size: 11.5px;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .item-price {
+    font-family: 'Cairo', sans-serif;
+    font-size: 11.5px;
+    color: var(--gold-light);
+    font-weight: 700;
+    white-space: nowrap;
+    padding-right: 4px;
+  }
+
+  /* ===== TWO-COL ITEMS ===== */
+  .items-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 8px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 6px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  /* ===== FULL WIDTH SECTION ===== */
+  .full-section {
+    margin-bottom: 10px;
+  }
+
+  /* ===== PRINT STYLES ===== */
+  @media print {
+    body { background: white; }
+    .page { margin: 0; page-break-after: always; }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- PAGE 1: DRINKS -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="outer-border"></div>
+  <div class="inner-border"></div>
+
+  <!-- Corner ornaments -->
+  <div class="corner corner-tl">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="corner corner-tr">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="corner corner-bl">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="corner corner-br">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-text">
+      <div class="menu-title-en">MENU</div>
+      <div class="menu-title-ar">قائمة الطعام</div>
+    </div>
+    <img class="logo-img" src="...
+  </div>
+
+  <div class="gold-divider">
+    <div class="line"></div>
+    <div class="diamond-sm"></div>
+    <div class="diamond"></div>
+    <div class="diamond-sm"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="content">
+    <!-- TWO COLUMNS: Hot + Cold -->
+    <div class="two-col">
+
+      <!-- HOT DRINKS -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <div class="section-title-ar">☕ المشروبات الساخنة</div>
+            <div class="section-title-en">HOT DRINKS</div>
+          </div>
+        </div>
+
+        <!-- القهوة -->
+        <div class="sub-section">
+          <div class="sub-title">☕ القهوة</div>
+          <div class="item"><span class="item-name">أمريكانو</span><span class="item-price">80</span></div>
+          <div class="item"><span class="item-name">اسبريسو</span><span class="item-price">45</span></div>
+          <div class="item"><span class="item-name">دبل اسبريسو</span><span class="item-price">82</span></div>
+          <div class="item"><span class="item-name">كابيتشينو زعفران</span><span class="item-price">95</span></div>
+          <div class="item"><span class="item-name">ثري كولور</span><span class="item-price">70</span></div>
+          <div class="item"><span class="item-name">التيه</span><span class="item-price">70</span></div>
+          <div class="item"><span class="item-name">كانيتشينو</span><span class="item-price">70</span></div>
+          <div class="item"><span class="item-name">فالت وايت</span><span class="item-price">90</span></div>
+          <div class="item"><span class="item-name">اسبانيش التيه</span><span class="item-price">85</span></div>
+          <div class="item"><span class="item-name">ميكاتو</span><span class="item-price">60</span></div>
+          <div class="item"><span class="item-name">كورتادو</span><span class="item-price">65</span></div>
+          <div class="item"><span class="item-name">بيكولو</span><span class="item-price">75</span></div>
+          <div class="item"><span class="item-name">قهوة تركي</span><span class="item-price">35</span></div>
+          <div class="item"><span class="item-name">قهوة غامق مهوج</span><span class="item-price">40</span></div>
+          <div class="item"><span class="item-name">قهوة بندق</span><span class="item-price">50</span></div>
+          <div class="item"><span class="item-name">نسكافيه</span><span class="item-price">50</span></div>
+          <div class="item"><span class="item-name">كوفي ميكس</span><span class="item-price">35</span></div>
+        </div>
+
+        <!-- مشروبات دافئة -->
+        <div class="sub-section">
+          <div class="sub-title">🍵 مشروبات دافئة</div>
+          <div class="items-2col">
+            <div>
+              <div class="item"><span class="item-name">هوت شوكلت</span><span class="item-price">50</span></div>
+              <div class="item"><span class="item-name">شاي</span><span class="item-price">30</span></div>
+              <div class="item"><span class="item-name">شاي فلفر</span><span class="item-price">35</span></div>
+              <div class="item"><span class="item-name">اعشاب</span><span class="item-price">30</span></div>
+              <div class="item"><span class="item-name">هوت سيدر</span><span class="item-price">50</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-name">سحلب</span><span class="item-price">75</span></div>
+              <div class="item"><span class="item-name">قرفة</span><span class="item-price">50</span></div>
+              <div class="item"><span class="item-name">حلبة</span><span class="item-price">50</span></div>
+              <div class="item"><span class="item-name">ليمون</span><span class="item-price">30</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLD DRINKS -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <div class="section-title-ar">🧊 المشروبات الباردة</div>
+            <div class="section-title-en">COLD DRINKS</div>
+          </div>
+        </div>
+
+        <!-- قهوة باردة -->
+        <div class="sub-section">
+          <div class="sub-title">☕ قهوة باردة</div>
+          <div class="items-2col">
+            <div>
+              <div class="item"><span class="item-name">ايس امريكانو</span><span class="item-price">80</span></div>
+              <div class="item"><span class="item-name">ايس التيه</span><span class="item-price">85</span></div>
+              <div class="item"><span class="item-name">ايس سبنيش التيه</span><span class="item-price">95</span></div>
+              <div class="item"><span class="item-name">ايس ثري كولور</span><span class="item-price">85</span></div>
+              <div class="item"><span class="item-name">ايس كابيتشينو</span><span class="item-price">85</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-name">ايس موكا</span><span class="item-price">90</span></div>
+              <div class="item"><span class="item-name">ايس بلو التيه</span><span class="item-price">90</span></div>
+              <div class="item"><span class="item-name">فرابيه اوريو</span><span class="item-price">90</span></div>
+              <div class="item"><span class="item-name">فرابيتشينو</span><span class="item-price">95</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- موهيتو -->
+        <div class="sub-section">
+          <div class="sub-title">🍃 موهيتو</div>
+          <div class="items-2col">
+            <div>
+              <div class="item"><span class="item-name">موهيتو كلاسيك</span><span class="item-price">80</span></div>
+              <div class="item"><span class="item-name">موهيتو بلو بيري</span><span class="item-price">90</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-name">موهيتو باشون فروت</span><span class="item-price">90</span></div>
+              <div class="item"><span class="item-name">صن شاين</span><span class="item-price">60</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- سكوتش -->
+        <div class="sub-section">
+          <div class="sub-title">🥃 سكوتش</div>
+          <div class="items-2col">
+            <div>
+              <div class="item"><span class="item-name">هامر هيد</span><span class="item-price">110</span></div>
+              <div class="item"><span class="item-name">بلو سكاي</span><span class="item-price">75</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-name">بينا كولادا</span><span class="item-price">70</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- سوفت درينك -->
+        <div class="sub-section">
+          <div class="sub-title">🥤 سوفت درينك</div>
+          <div class="items-2col">
+            <div>
+              <div class="item"><span class="item-name">بيبسي</span><span class="item-price">35</span></div>
+              <div class="item"><span class="item-name">فيروز</span><span class="item-price">45</span></div>
+              <div class="item"><span class="item-name">بيريل</span><span class="item-price">45</span></div>
+              <div class="item"><span class="item-name">V. COLA</span><span class="item-price">45</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-name">فيوري</span><span class="item-price">45</span></div>
+              <div class="item"><span class="item-name">تويست</span><span class="item-price">45</span></div>
+              <div class="item"><span class="item-name">ريد بول</span><span class="item-price">90</span></div>
+              <div class="item"><span class="item-name">مياه معدنية ص.</span><span class="item-price">15</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRESH JUICES - Full Width -->
+    <div class="section-card full-section">
+      <div class="section-header">
+        <div>
+          <div class="section-title-ar">🍊 العصائر الطازجة</div>
+          <div class="section-title-en">FRESH JUICES</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0 10px;">
+        <div class="item"><span class="item-name">مانجو</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">جوافة</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">فراولة</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">بطيخ</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">موز باللبن</span><span class="item-price">75</span></div>
+        <div class="item"><span class="item-name">برتقال</span><span class="item-price">50</span></div>
+        <div class="item"><span class="item-name">ليمون</span><span class="item-price">50</span></div>
+        <div class="item"><span class="item-name">ليمون نعناع</span><span class="item-price">55</span></div>
+        <div class="item"><span class="item-name">كنتالوب</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">كيوي</span><span class="item-price">60</span></div>
+        <div class="item"><span class="item-name">خوخ</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">بلح باللبن</span><span class="item-price">60</span></div>
+        <div class="item"><span class="item-name">افوكادو</span><span class="item-price">100</span></div>
+        <div class="item"><span class="item-name">فلوريدا</span><span class="item-price">85</span></div>
+        <div class="item"><span class="item-name">اوريو</span><span class="item-price">100</span></div>
+        <div class="item"><span class="item-name">توينكز</span><span class="item-price">100</span></div>
+        <div class="item"><span class="item-name">هوهوز</span><span class="item-price">100</span></div>
+        <div class="item"><span class="item-name">زبادي فواكه</span><span class="item-price">80</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gold-divider" style="margin: 0 20px 4px;">
+    <div class="line"></div>
+    <div class="diamond-sm"></div>
+    <div class="diamond"></div>
+    <div class="diamond-sm"></div>
+    <div class="line"></div>
+  </div>
+  <div class="footer">✦ أسعارنا شاملة ضريبة القيمة المضافة ✦</div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- PAGE 2: DESSERTS & MILKSHAKES -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="outer-border"></div>
+  <div class="inner-border"></div>
+
+  <div class="corner corner-tl">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="corner corner-tr">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="corner corner-bl">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="corner corner-br">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2,2 L38,2 M2,2 L2,38" stroke="#C9A227" stroke-width="2" fill="none"/>
+      <circle cx="2" cy="2" r="3" fill="#C9A227"/>
+      <path d="M8,2 L8,8 L2,8" stroke="#C9A227" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-text">
+      <div class="menu-title-en">MENU</div>
+      <div class="menu-title-ar">قائمة الطعام</div>
+    </div>
+    <img class="logo-img" src="...
+  </div>
+
+  <div class="gold-divider">
+    <div class="line"></div>
+    <div class="diamond-sm"></div>
+    <div class="diamond"></div>
+    <div class="diamond-sm"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="content">
+
+    <!-- DESSERTS & MILKSHAKES 2 columns -->
+    <div class="two-col" style="margin-bottom: 12px;">
+
+      <!-- DESSERTS -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <div class="section-title-ar">🍰 الحلويات</div>
+            <div class="section-title-en">DESSERTS</div>
+          </div>
+        </div>
+        <div class="item"><span class="item-name">مولتن كيك</span><span class="item-price">120</span></div>
+        <div class="item"><span class="item-name">ريد فيلف</span><span class="item-price">90</span></div>
+        <div class="item"><span class="item-name">تيراميسو</span><span class="item-price">110</span></div>
+        <div class="item"><span class="item-name">كيك جزر</span><span class="item-price">85</span></div>
+        <div class="item"><span class="item-name">تشيز كيك</span><span class="item-price">100</span></div>
+        <div class="item"><span class="item-name">وافل</span><span class="item-price">50</span></div>
+        <div class="item"><span class="item-name">ام علي</span><span class="item-price">60</span></div>
+        <div class="item"><span class="item-name">ارز بلبن</span><span class="item-price">50</span></div>
+        <div class="item"><span class="item-name">طواجن شوكلت</span><span class="item-price"></span></div>
+      </div>
+
+      <!-- MILKSHAKES -->
+      <div class="section-card">
+        <div class="section-header">
+          <div>
+            <div class="section-title-ar">🥤 ميلك شيك</div>
+            <div class="section-title-en">MILKSHAKES</div>
+          </div>
+        </div>
+        <div class="item"><span class="item-name">فانيليا لوتس / كراميل شوكلت</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">فراولة</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">بلوبيري</span><span class="item-price">75</span></div>
+        <div class="item"><span class="item-name">تشيز كيك</span><span class="item-price">110</span></div>
+        <div class="item"><span class="item-name">توتي فروتي</span><span class="item-price">70</span></div>
+        <div class="item"><span class="item-name">فروت سالاد</span><span class="item-price">70</span></div>
+
+        <!-- إضافات -->
+        <div style="margin-top: 14px;">
+          <div class="sub-title">➕ إضافات</div>
+          <div class="items-2col">
+            <div>
+              <div class="item"><span class="item-name">فانيليا</span><span class="item-price">15</span></div>
+              <div class="item"><span class="item-name">شوكلت</span><span class="item-price">15</span></div>
+              <div class="item"><span class="item-name">كراميل</span><span class="item-price">15</span></div>
+            </div>
+            <div>
+              <div class="item"><span class="item-name">لوتس</span><span class="item-price">20</span></div>
+              <div class="item"><span class="item-name">بستاشيو</span><span class="item-price">20</span></div>
+              <div class="item"><span class="item-name">بندق</span><span class="item-price">20</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative center element for page 2 -->
+    <div style="text-align: center; margin: 30px 0; position: relative; z-index: 5;">
+      <div style="color: rgba(201,162,39,0.15); font-size: 200px; font-family: serif; line-height: 1; user-select: none; pointer-events: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">🍰</div>
+      <div style="position: relative; z-index: 6;">
+        <div class="gold-divider" style="margin-bottom: 12px;">
+          <div class="line"></div>
+          <div class="diamond-sm"></div>
+          <div class="diamond"></div>
+          <div class="diamond-sm"></div>
+          <div class="line"></div>
+        </div>
+        <p style="font-family: 'Amiri', serif; font-size: 16px; color: var(--gold-light); letter-spacing: 2px;">✦ استمتع بأفضل تجربة قهوة ✦</p>
+        <p style="font-family: 'Cairo', sans-serif; font-size: 11px; color: var(--text-dim); letter-spacing: 3px; margin-top: 4px;">ENJOY THE FINEST COFFEE EXPERIENCE</p>
+        <div class="gold-divider" style="margin-top: 12px;">
+          <div class="line"></div>
+          <div class="diamond-sm"></div>
+          <div class="diamond"></div>
+          <div class="diamond-sm"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gold-divider" style="margin: 0 20px 4px;">
+    <div class="line"></div>
+    <div class="diamond-sm"></div>
+    <div class="diamond"></div>
+    <div class="diamond-sm"></div>
+    <div class="line"></div>
+  </div>
+  <div class="footer">✦ أسعارنا شاملة ضريبة القيمة المضافة ✦</div>
+</div>
+
+</body>
+</html>
