@@ -100,7 +100,7 @@ menu_data = [
                     {"ar": "فيوري", "en": "Fury", "price": "45"},
                     {"ar": "تويست", "en": "Twist", "price": "45"},
                     {"ar": "ريد بول", "en": "Red Bull", "price": "90"},
-                    {"ar": "مياه معدنية ", "en": "Water", "price": "15"}
+                    {"ar": "مياه معدنية", "en": "Water", "price": "15"}
                 ]
             }
         ]
