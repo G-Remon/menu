@@ -155,7 +155,7 @@ menu_data = [
                     {"ar": "وافل", "en": "Waffle", "price": "50"},
                     {"ar": "ام علي", "en": "Om Ali", "price": "60"},
                     {"ar": "ارز بلبن", "en": "Rice Pudding", "price": "50"},
-                    {"ar": "طواجن شوكلت", "en": "Chocolate Pots", "price": ""}
+                    {"ar": "طواجن شوكلت", "en": "Chocolate Pots", "price": "50"}
                 ]
             }
         ]
@@ -188,7 +188,7 @@ menu_data = [
                     {"ar": "لوتس", "en": "Lotus", "price": "20"},
                     {"ar": "بستاشيو", "en": "Pistachio", "price": "20"},
                     {"ar": "بندق", "en": "Hazelnut", "price": "20"},
-                    {"ar": "إضافة اسبريسو", "en": "Espresso Add-on", "price": "30"}
+                    {"ar": "اسبريسو", "en": "Espresso", "price": "30"}
                 ]
             }
         ]
