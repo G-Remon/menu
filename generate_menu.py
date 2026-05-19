@@ -4,6 +4,22 @@ logo_src = 'image-removebg-preview.png'
 
 menu_data = [
     {
+        "id": "breakfast",
+        "title_ar": "الإفطار",
+        "title_en": "BREAKFAST",
+        "icon": "🥐",
+        "sub_sections": [
+            {
+                "title_ar": "",
+                "title_en": "",
+                "items": [
+                    {"ar": "كرواسون جبن", "en": "Cheese Croissant", "price": "65"},
+                    {"ar": "كرواسون تركي مع جبن", "en": "Turkey with Cheese Croissant", "price": "95"}
+                ]
+            }
+        ]
+    },
+    {
         "id": "hot-drinks",
         "title_ar": "المشروبات الساخنة",
         "title_en": "HOT DRINKS",
