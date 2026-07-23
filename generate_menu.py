@@ -190,8 +190,8 @@ menu_data = [
                     {"ar": "فراولة", "en": "Strawberry", "price": "85"},
                     {"ar": "بلوبيري", "en": "Blueberry", "price": "75"},
                     {"ar": "تشيز كيك", "en": "Cheesecake", "price": "110"},
-                    {"ar": "توتي فروتي", "en": "Tutti Frutti", "price": "70"},
-                    {"ar": "فروت سالاد", "en": "Fruit Salad", "price": "70"},
+                    {"ar": "توتي فروتي", "en": "Tutti Frutti", "price": "120"},
+                    {"ar": "فروت سالاد", "en": "Fruit Salad", "price": "100"},
                     {"ar": "مافين كيك", "en": "Muffin Cake", "price": "85"}
                 ]
             },
