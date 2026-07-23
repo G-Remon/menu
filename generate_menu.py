@@ -3,22 +3,22 @@ import json
 logo_src = 'image-removebg-preview.png'
 
 menu_data = [
-    {
-        "id": "breakfast",
-        "title_ar": "الإفطار",
-        "title_en": "BREAKFAST",
-        "icon": "🥐",
-        "sub_sections": [
-            {
-                "title_ar": "",
-                "title_en": "",
-                "items": [
-                    {"ar": "كرواسون جبن", "en": "Cheese Croissant", "price": "65"},
-                    {"ar": "كرواسون تركي مع جبن", "en": "Turkey with Cheese Croissant", "price": "95"}
-                ]
-            }
-        ]
-    },
+#    {
+#        "id": "breakfast",
+#        "title_ar": "الإفطار",
+#        "title_en": "BREAKFAST",
+#        "icon": "🥐",
+#        "sub_sections": [
+#            {
+#                "title_ar": "",
+#                "title_en": "",
+#                "items": [
+#                    {"ar": "كرواسون جبن", "en": "Cheese Croissant", "price": "65"},
+#                    {"ar": "كرواسون تركي مع جبن", "en": "Turkey with Cheese Croissant", "price": "95"}
+#                ]
+#            }
+#        ]
+#    },
     {
         "id": "hot-drinks",
         "title_ar": "المشروبات الساخنة",
@@ -165,8 +165,8 @@ menu_data = [
                 "items": [
                     {"ar": "مولتن كيك", "en": "Molten Cake", "price": "120"},
                     {"ar": "ريد فيلفيت", "en": "Red Velvet", "price": "90"},
-                    {"ar": "تيراميسو", "en": "Tiramisu", "price": "110"},
-                    {"ar": "كيك جزر", "en": "Carrot Cake", "price": "85"},
+                    # {"ar": "تيراميسو", "en": "Tiramisu", "price": "110"},
+                    # {"ar": "كيك جزر", "en": "Carrot Cake", "price": "85"},
                     {"ar": "تشيز كيك", "en": "Cheesecake", "price": "100"},
                     {"ar": "وافل", "en": "Waffle", "price": "50"},
                     {"ar": "ام علي", "en": "Om Ali", "price": "60"},
