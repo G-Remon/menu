@@ -55,10 +55,10 @@ menu_data = [
                     {"ar": "هوت شوكلت", "en": "Hot Chocolate", "price": "50"},
                     {"ar": "شاي", "en": "Tea", "price": "30"},
                     {"ar": "شاي فلفر", "en": "Flavored Tea", "price": "35"},
-                    {"ar": "اعشاب", "en": "Herbs", "price": "30"},
+                    {"ar": "أعشاب صيدلية", "en": "Pharmacy Herbs", "price": "55"},
                     {"ar": "هوت سيدر", "en": "Hot Cider", "price": "50"},
                     {"ar": "سحلب", "en": "Sahlab", "price": "75"},
-                    {"ar": "قرفة", "en": "Cinnamon", "price": "50"},
+                    {"ar": "قرفة", "en": "Cinnamon", "price": "30"},
                     {"ar": "حلبة", "en": "Fenugreek", "price": "50"},
                     {"ar": "ليمون", "en": "Lemon", "price": "30"}
                 ]
@@ -109,7 +109,7 @@ menu_data = [
                 "title_ar": "سوفت درينك",
                 "title_en": "Soft Drinks",
                 "items": [
-                    {"ar": "بيبسي", "en": "Pepsi", "price": "35"},
+                    {"ar": "كنز", "en": "Cans", "price": "45"},
                     {"ar": "فيروز", "en": "Fayrouz", "price": "45"},
                     {"ar": "بيريل", "en": "Birell", "price": "45"},
                     {"ar": "V. COLA", "en": "V. Cola", "price": "45"},
@@ -136,19 +136,19 @@ menu_data = [
                     {"ar": "فراولة", "en": "Strawberry", "price": "70"},
                     {"ar": "بطيخ", "en": "Watermelon", "price": "70"},
                     {"ar": "موز باللبن", "en": "Banana Milk", "price": "75"},
-                    {"ar": "برتقال", "en": "Orange", "price": "50"},
-                    {"ar": "ليمون", "en": "Lemon", "price": "50"},
-                    {"ar": "ليمون نعناع", "en": "Lemon Mint", "price": "55"},
+                    {"ar": "برتقال", "en": "Orange", "price": "55"},
+                    {"ar": "ليمون سادة", "en": "Plain Lemon", "price": "60"},
+                    {"ar": "ليمون نعناع", "en": "Lemon Mint", "price": "65"},
                     {"ar": "كنتالوب", "en": "Cantaloupe", "price": "70"},
-                    {"ar": "كيوي", "en": "Kiwi", "price": "60"},
+                    {"ar": "كيوي", "en": "Kiwi", "price": "80"},
                     {"ar": "خوخ", "en": "Peach", "price": "70"},
-                    {"ar": "بلح باللبن", "en": "Dates with Milk", "price": "60"},
+                    {"ar": "بلح باللبن", "en": "Dates with Milk", "price": "75"},
                     {"ar": "افوكادو", "en": "Avocado", "price": "100"},
                     {"ar": "فلوريدا", "en": "Florida", "price": "85"},
                     {"ar": "اوريو", "en": "Oreo", "price": "100"},
                     {"ar": "توينكز", "en": "Twinkies", "price": "100"},
                     {"ar": "هوهوز", "en": "HoHos", "price": "100"},
-                    {"ar": "زبادي فواكه", "en": "Fruit Yogurt", "price": "80"}
+                    {"ar": "زبادي فراولة", "en": "Strawberry Yogurt", "price": "85"}
                 ]
             }
         ]
@@ -186,8 +186,8 @@ menu_data = [
                 "title_ar": "",
                 "title_en": "",
                 "items": [
-                    {"ar": "فانيليا / لوتس / كراميل / شوكلت", "en": "Vanilla / Lotus / Caramel / Choco", "price": "70"},
-                    {"ar": "فراولة", "en": "Strawberry", "price": "70"},
+                    {"ar": "فانيليا / لوتس / كراميل / شوكلت", "en": "Vanilla / Lotus / Caramel / Choco", "price": "80"},
+                    {"ar": "فراولة", "en": "Strawberry", "price": "85"},
                     {"ar": "بلوبيري", "en": "Blueberry", "price": "75"},
                     {"ar": "تشيز كيك", "en": "Cheesecake", "price": "110"},
                     {"ar": "توتي فروتي", "en": "Tutti Frutti", "price": "70"},
