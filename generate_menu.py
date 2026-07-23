@@ -188,7 +188,7 @@ menu_data = [
                 "items": [
                     {"ar": "فانيليا / لوتس / كراميل / شوكلت", "en": "Vanilla / Lotus / Caramel / Choco", "price": "80"},
                     {"ar": "فراولة", "en": "Strawberry", "price": "85"},
-                    {"ar": "بلوبيري", "en": "Blueberry", "price": "75"},
+                    {"ar": "بلوبيري", "en": "Blueberry", "price": "85"},
                     {"ar": "تشيز كيك", "en": "Cheesecake", "price": "110"},
                     {"ar": "توتي فروتي", "en": "Tutti Frutti", "price": "120"},
                     {"ar": "فروت سالاد", "en": "Fruit Salad", "price": "100"},
